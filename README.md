@@ -1,54 +1,85 @@
-# React + TypeScript + Vite
+# Unilime Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+This is a React-based web application built with Vite. The project includes a dashboard with multiple pages (Overview, Users, Settings) and a set of reusable UI components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup Instructions
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js (v16 or higher recommended)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+
+1. Clone the repository
+
+```bash
+  git clone <repository-url>
+  cd unilime
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
+# or
+yarn install
 ```
+
+3. Run the development server
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+4. Open the app in your browser at http://localhost:5173
+
+## Project Structure
+
+unilime  
+├─ public/  
+├─ src/  
+│ ├─ assets/  
+│ ├─ components/  
+│ ├─ hooks/  
+│ ├─ layout/  
+│ ├─ lib/  
+│ ├─ pages/  
+│ ├─ routes/  
+│ ├─ App.tsx  
+│ └─ main.tsx  
+├─ .eslint.config.js  
+├─ tailwind.config.ts  
+├─ vite.config.ts  
+└─ tsconfig.json
+
+## Implementation Details
+
+### Routing
+
+The project uses react-router-dom with createBrowserRouter.
+The file src/routes/Routes.tsx contains the routes:
+
+- / — main layout (App component)
+- /users — users table page
+- /settings — settings form page
+- /overview — metrics page
+
+Page titles are passed via handle.title and displayed in Layout.tsx.
+
+### State Management
+
+The project uses React local state (`useState`) to manage sorting in the users table.
+For dark/light theme, a custom `ThemeProvider` based on `next-themes` and a custom `ThemeToggle` component are used.
+
+### Components
+
+UI components are built on top of the shadcn/ui library with Tailwind CSS.
+
+Metric cards, tables, and the settings form are implemented with reusability in mind.
+
+Appear animations are implemented using the Framer Motion library.
