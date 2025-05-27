@@ -40,22 +40,62 @@ yarn dev
 
 ## Project Structure
 
-unilime  
-├─ public/  
-├─ src/  
-│ ├─ assets/  
-│ ├─ components/  
-│ ├─ hooks/  
-│ ├─ layout/  
-│ ├─ lib/  
-│ ├─ pages/  
-│ ├─ routes/  
-│ ├─ App.tsx  
-│ └─ main.tsx  
-├─ .eslint.config.js  
-├─ tailwind.config.ts  
-├─ vite.config.ts  
-└─ tsconfig.json
+```
+unilime
+├─ components.json
+├─ eslint.config.js
+├─ index.html
+├─ package-lock.json
+├─ package.json
+├─ public
+│  └─ vite.svg
+├─ README.md
+├─ src
+│  ├─ App.css
+│  ├─ App.tsx
+│  ├─ assets
+│  ├─ components
+│  │  ├─ theme-provider.tsx
+│  │  └─ ui
+│  │     ├─ app-sidebar.tsx
+│  │     ├─ button.tsx
+│  │     ├─ card.tsx
+│  │     ├─ checkbox.tsx
+│  │     ├─ input.tsx
+│  │     ├─ label.tsx
+│  │     ├─ metric-card.tsx
+│  │     ├─ separator.tsx
+│  │     ├─ sheet.tsx
+│  │     ├─ sidebar.tsx
+│  │     ├─ skeleton.tsx
+│  │     ├─ table.tsx
+│  │     ├─ theme-toggle.tsx
+│  │     └─ tooltip.tsx
+│  ├─ hooks
+│  │  └─ use-mobile.ts
+│  ├─ index.css
+│  ├─ layout
+│  │  └─ layout.tsx
+│  ├─ lib
+│  │  └─ utils.ts
+│  ├─ main.tsx
+│  ├─ pages
+│  │  ├─ OverviewPage
+│  │  │  └─ OverviewPage.tsx
+│  │  ├─ SettingsPage
+│  │  │  └─ SettingsPage.tsx
+│  │  └─ UsersPage
+│  │     └─ UsersPage.tsx
+│  ├─ routes
+│  │  └─ Routes.tsx
+│  └─ vite-env.d.ts
+├─ talwind.config.ts
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+└─ vite.config.ts
+
+```
 
 ## Implementation Details
 
